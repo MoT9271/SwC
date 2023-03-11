@@ -1,33 +1,31 @@
 package by.bntu.fitr.poisit.vikvik.university.model.logic;
 
-import by.bntu.fitr.poisit.vikvik.university.model.entity.Knight;
+import by.bntu.fitr.poisit.vikvik.university.model.entity.Hero;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 public class Manager {
-    public static Knight[] creatHeroes(int count) {
+    public static Hero[] creatHeroes(int count) {
         String[] artifacts = new String[]{"Wraith Band", "Bracer", "Null Talisman", "Boots of Speed"};
         String[] names = new String[]{"Richard", "William", "Henry", "Norman", "Edward", "Atelard"};
         String[] races = new String[]{"Human", "Orc", "Dwarf", "Elf", "Worgen", "Undead", "Tauren", "Troll"};
         String[] archetypes = new String[]{"Tank", "Assassin", "Warrior", "Support", "Rdd"};
-        Knight[] knights = new Knight[count];
+        Hero[] heroes = new Hero[count];
         Random random = new Random();
         for (int i = 0; i < count; i++) {
-            String name = names[(int) Math.floor(Math.random() * names.length)];
-            String race = races[(int) Math.floor(Math.random() * races.length)];
-            String archetype = archetypes[(int) Math.floor(Math.random() * archetypes.length)];
+            String name = names[(int)Math.floor(Math.random() * names.length)];
+            String race = races[(int)Math.floor(Math.random() * races.length)];
+            String archetype = archetypes[(int)Math.floor(Math.random() * archetypes.length)];
             String[] build = new String[3];
             for (int j = 0; j < 3; j++) {
-                build[j] = artifacts[(int) Math.floor(Math.random() * artifacts.length)];
+                build[j] = artifacts[(int)Math.floor(Math.random() * artifacts.length)];
             }
-            knights[i] = new Knight(name, 0, race, archetype, build);
+            heroes[i] = new Hero(name, 0, race, archetype, build);
         }
-        return knights;
+        return heroes;
     }
 
-    public static int[] getStats(Knight knight) {
+    public static int[] getStats(Hero hero) {
         // Artifact:[strength, agility, intelligence, movement speed, armor, attack speed, coast]
         int[] wR = new int[]{2, 5, 2, 0, 2, 5, 700};
         int[] bR = new int[]{5, 2, 2, 0, 2, 5, 260};
@@ -36,14 +34,13 @@ public class Manager {
         int[] temp;
         int[] stats = new int[]{0, 0, 0, 0, 0, 0, 0};
         for (int j = 0; j < 3; j++) {
-
-            if (knight.artifacts[j] == "Wraith Band") {
+            if (hero.artifacts[j] == "Wraith Band") {
                 temp = wR;
             }
-            else if (knight.artifacts[j] == "Bracer"){
+            else if (hero.artifacts[j] == "Bracer"){
                 temp = bR;
             }
-            else if (knight.artifacts[j] == "Null Talisman"){
+            else if (hero.artifacts[j] == "Null Talisman"){
                 temp = nT;
             }
             else {
