@@ -12,11 +12,12 @@ public class Main {
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
 
-        System.out.println("Enter the amount of knights:x");
+        System.out.println("Enter the amount of knights:");
         int count = in.nextInt();
         Knight[] knights = Manager.creatHeroes(count);
         for (int i = 0; i < count; i++){
             Printer.print(knights[i]);
+            Printer.printStats(Manager.getStats(knights[i]));
         }
 
     }
