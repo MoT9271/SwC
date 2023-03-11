@@ -1,4 +1,4 @@
-package by.bntu.fitr.poisit.vikvik.university.model.entity;
+package by.bntu.fitr.poisit.matnik.university.model.entity;
 
 import java.util.Arrays;
 

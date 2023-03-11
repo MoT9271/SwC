@@ -1,8 +1,7 @@
-package by.bntu.fitr.poisit.vikvik.university.controller;
-
-import by.bntu.fitr.poisit.vikvik.university.model.entity.Hero;
-import by.bntu.fitr.poisit.vikvik.university.model.logic.Manager;
-import by.bntu.fitr.poisit.vikvik.university.view.Printer;
+package by.bntu.fitr.poisit.matnik.university.controller;
+import by.bntu.fitr.poisit.matnik.university.model.entity.Hero;
+import by.bntu.fitr.poisit.matnik.university.model.logic.Manager;
+import by.bntu.fitr.poisit.matnik.university.view.Printer;
 
 import java.util.Scanner;
 

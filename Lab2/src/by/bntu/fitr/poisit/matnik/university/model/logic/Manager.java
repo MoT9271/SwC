@@ -1,6 +1,6 @@
-package by.bntu.fitr.poisit.vikvik.university.model.logic;
+package by.bntu.fitr.poisit.matnik.university.model.logic;
 
-import by.bntu.fitr.poisit.vikvik.university.model.entity.Hero;
+import by.bntu.fitr.poisit.matnik.university.model.entity.Hero;
 
 import java.util.Random;
 
@@ -27,10 +27,10 @@ public class Manager {
 
     public static int[] getStats(Hero hero) {
         // Artifact:[strength, agility, intelligence, movement speed, armor, attack speed, coast]
-        int[] wR = new int[]{2, 5, 2, 0, 2, 5, 700};
-        int[] bR = new int[]{5, 2, 2, 0, 2, 5, 260};
-        int[] nT = new int[]{2, 2, 5, 0, 2, 5, 120};
-        int[] bS = new int[]{0, 0, 0, 45, 0, 0, 300};
+        int[] wR = new int[]{2, 5, 2, 0, 2, 5, 700}; //Wraith Band
+        int[] bR = new int[]{5, 2, 2, 0, 2, 5, 260};//Bracer
+        int[] nT = new int[]{2, 2, 5, 0, 2, 5, 120};//Null Talisman
+        int[] bS = new int[]{0, 0, 0, 45, 0, 0, 300};//Boots of Speed
         int[] temp;
         int[] stats = new int[]{0, 0, 0, 0, 0, 0, 0};
         for (int j = 0; j < 3; j++) {
