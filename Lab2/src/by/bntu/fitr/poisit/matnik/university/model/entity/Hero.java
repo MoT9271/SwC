@@ -6,8 +6,8 @@ public class Hero {
 
     String name;
     String race;
-    String archetype;
-
+    Artifact[] artifacts;
+    int level;
 
     public String getName() {
         return name;
@@ -15,10 +15,6 @@ public class Hero {
 
     public String getRace() {
         return race;
-    }
-
-    public String getArchetype() {
-        return archetype;
     }
 
     public Artifact[] getArtifacts() {
@@ -37,10 +33,6 @@ public class Hero {
         this.race = race;
     }
 
-    public void setArchetype(String archetype) {
-        this.archetype = archetype;
-    }
-
     public void setArtifacts(Artifact[] artifacts) {
         this.artifacts = artifacts;
     }
@@ -49,10 +41,9 @@ public class Hero {
         this.level = level;
     }
 
-    Artifact[] artifacts;
-    int level;
-    public Hero(String name, int level, String race, String archetype, Artifact[] artifacts){
-        this.archetype = archetype;
+
+    public Hero(String name, int level, String race, Artifact[] artifacts){
+
         this.artifacts = artifacts;
         this.level = level;
         this.name = name;
@@ -61,7 +52,7 @@ public class Hero {
 
 
     public Hero(){
-        this("Sasha", 0, "Human", "Tank", null);
+        this("Sasha", 0, "Human", null);
     }
 
 
@@ -70,10 +61,9 @@ public class Hero {
         return "Hero{" +
                 "name='" + name + '\'' +
                 ", race='" + race + '\'' +
-                ", archetype='" + archetype + '\'' +
-                "artifacts: "+ Arrays.toString(artifacts) +
+                "\nartifacts: "+ Arrays.toString(artifacts) +
                 ", level=" + level +
-                " total stats" + Arrays.toString(Manager.getStats(this)) +
+                " total stats" +
                 "}\n";
     }
 }

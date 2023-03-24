@@ -6,7 +6,6 @@ import java.util.Random;
 
 public class Manager {
 
-
     public static int[] getStats(Hero hero) {
         int[] stats = new int[]{0, 0, 0, 0, 0, 0, 0};
         for (Artifact artifact : hero.getArtifacts()){
