@@ -1,14 +1,15 @@
 package by.bntu.fitr.poisit.matnik.university.model.entity;
-import by.bntu.fitr.poisit.matnik.university.model.logic.Manager;
+
 import java.util.Arrays;
 
-public class Hero {
+public abstract class Hero {
 
     String name;
     String race;
     Artifact[] artifacts;
     int level;
-
+    public abstract void setAbilities(Abilities[] abilities);
+    public abstract Abilities[] getAbilities();
     public String getName() {
         return name;
     }
@@ -24,6 +25,7 @@ public class Hero {
     public int getLevel() {
         return level;
     }
+
 
     public void setName(String name) {
         this.name = name;
@@ -42,7 +44,7 @@ public class Hero {
     }
 
 
-    public Hero(String name, int level, String race, Artifact[] artifacts){
+    public Hero(String name, int level, String race, Artifact[] artifacts) {
 
         this.artifacts = artifacts;
         this.level = level;
@@ -50,9 +52,16 @@ public class Hero {
         this.race = race;
     }
 
+    public Hero(Hero hero) {
+        this.artifacts = hero.getArtifacts();
+        this.level = hero.getLevel();
+        this.name = hero.getName();
+        this.race = hero.getName();
+    }
 
-    public Hero(){
-        this("Sasha", 0, "Human", null);
+
+    public Hero() {
+        this("Sasha", 0, "Gavs", null);
     }
 
 
@@ -61,7 +70,7 @@ public class Hero {
         return "Hero{" +
                 "name='" + name + '\'' +
                 ", race='" + race + '\'' +
-                "\nartifacts: "+ Arrays.toString(artifacts) +
+                "\nartifacts: " + Arrays.toString(artifacts) +
                 ", level=" + level +
                 " total stats" +
                 "}\n";

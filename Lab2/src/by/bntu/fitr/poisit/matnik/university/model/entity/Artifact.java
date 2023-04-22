@@ -2,7 +2,8 @@ package by.bntu.fitr.poisit.matnik.university.model.entity;
 
 import java.util.Arrays;
 
-public class Artifact {
+public class Artifact
+{
     String type;
     int [] stats;
     public Artifact(String type, int[] stats){

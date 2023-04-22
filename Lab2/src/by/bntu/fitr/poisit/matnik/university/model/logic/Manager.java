@@ -8,6 +8,8 @@ public class Manager {
 
     public static int[] getStats(Hero hero) {
         int[] stats = new int[]{0, 0, 0, 0, 0, 0, 0};
+        if (hero == null) return null;
+        if (hero.getArtifacts() == null) return null;
         for (Artifact artifact : hero.getArtifacts()){
             for (int i = 0; i < 7; i++) stats[i] += artifact.getStats()[i];
         }

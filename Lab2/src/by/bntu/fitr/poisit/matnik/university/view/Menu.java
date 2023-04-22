@@ -17,7 +17,7 @@ public class Menu {
             System.out.println("2. Sort by name");
             System.out.println("3. Sort by level");
             System.out.println("4. Sort by build cost");
-            System.out.println("0. Exit");
+            System.out.println("0. Exit\n");
             Scanner scanner = new Scanner(System.in);
             choice = scanner.next();
             switch (choice){
@@ -36,21 +36,33 @@ public class Menu {
                         System.out.println("The list is empty!");
                         break;
                     }
-                    Sorter.sortByName(heroes);
+                    heroes = Sorter.sortByName(heroes);
+                    for (int i = 0; i < heroes.length; i++){
+                        Printer.print(heroes[i]);
+                        Printer.printStats(Manager.getStats(heroes[i]));
+                    }
                     break;
                 case "3":
                     if (heroes == null) {
                         System.out.println("The list is empty!");
                         break;
                     }
-                    Sorter.sortByLevel(heroes);
+                    heroes = Sorter.sortByLevel(heroes);
+                    for (int i = 0; i < heroes.length; i++){
+                        Printer.print(heroes[i]);
+                        Printer.printStats(Manager.getStats(heroes[i]));
+                    }
                     break;
                 case "4":
                     if (heroes == null) {
                         System.out.println("The list is empty!");
                         break;
                     }
-                    Sorter.sortByBuildCost(heroes);
+                    heroes = Sorter.sortByBuildCost(heroes);
+                    for (int i = 0; i < heroes.length; i++){
+                        Printer.print(heroes[i]);
+                        Printer.printStats(Manager.getStats(heroes[i]));
+                    }
                     break;
                 default:
                     System.out.println("Wrong choice!");

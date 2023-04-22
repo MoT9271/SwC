@@ -6,7 +6,7 @@ import by.bntu.fitr.poisit.matnik.university.view.Printer;
 import java.util.Arrays;
 
 public class Sorter {
-    public static void sortByLevel(Hero[] heroes){
+    public static Hero[] sortByLevel(Hero[] heroes){
         for (int i = 0; i < heroes.length; i++){
             for (int j = i + 1; j < heroes.length; j++){
                 if (heroes[i].getLevel() > heroes[j].getLevel()){
@@ -16,12 +16,9 @@ public class Sorter {
                 }
             }
         }
-        for (int i = 0; i < heroes.length; i++){
-            Printer.print(heroes[i]);
-            Printer.printStats(Manager.getStats(heroes[i]));
-        }
+        return heroes;
     }
-    public static void sortByName(Hero[] heroes){
+    public static Hero[] sortByName(Hero[] heroes){
         for (int i = 0; i < heroes.length; i++){
             for (int j = i + 1; j < heroes.length; j++){
                 if (heroes[i].getName().compareTo(heroes[j].getName()) > 0){
@@ -31,12 +28,9 @@ public class Sorter {
                 }
             }
         }
-        for (int i = 0; i < heroes.length; i++){
-            Printer.print(heroes[i]);
-            Printer.printStats(Manager.getStats(heroes[i]));
-        }
+        return heroes;
     }
-    public static void sortByBuildCost(Hero[] heroes){
+    public static Hero[] sortByBuildCost(Hero[] heroes){
         for (int i = 0; i < heroes.length; i++){
             for (int j = i + 1; j < heroes.length; j++){
                 if (Manager.getStats(heroes[i])[6] > Manager.getStats(heroes[j])[6]){
@@ -46,9 +40,6 @@ public class Sorter {
                 }
             }
         }
-        for (int i = 0; i < heroes.length; i++){
-            Printer.print(heroes[i]);
-            Printer.printStats(Manager.getStats(heroes[i]));
-        }
+        return heroes;
     }
 }
