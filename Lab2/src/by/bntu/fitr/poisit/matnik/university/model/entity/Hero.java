@@ -1,15 +1,17 @@
 package by.bntu.fitr.poisit.matnik.university.model.entity;
 
-import java.util.Arrays;
+import java.util.List;
 
 public abstract class Hero {
 
     String name;
     String race;
-    Artifact[] artifacts;
+    List<Artifact> artifacts;
     int level;
-    public abstract void setAbilities(Abilities[] abilities);
-    public abstract Abilities[] getAbilities();
+
+    public abstract void setAbilities(List<Abilities> abilities);
+    public abstract List<Abilities> getAbilities();
+
     public String getName() {
         return name;
     }
@@ -18,14 +20,13 @@ public abstract class Hero {
         return race;
     }
 
-    public Artifact[] getArtifacts() {
+    public List<Artifact> getArtifacts() {
         return artifacts;
     }
 
     public int getLevel() {
         return level;
     }
-
 
     public void setName(String name) {
         this.name = name;
@@ -35,7 +36,7 @@ public abstract class Hero {
         this.race = race;
     }
 
-    public void setArtifacts(Artifact[] artifacts) {
+    public void setArtifacts(List<Artifact> artifacts) {
         this.artifacts = artifacts;
     }
 
@@ -43,9 +44,7 @@ public abstract class Hero {
         this.level = level;
     }
 
-
-    public Hero(String name, int level, String race, Artifact[] artifacts) {
-
+    public Hero(String name, int level, String race, List<Artifact> artifacts) {
         this.artifacts = artifacts;
         this.level = level;
         this.name = name;
@@ -56,21 +55,19 @@ public abstract class Hero {
         this.artifacts = hero.getArtifacts();
         this.level = hero.getLevel();
         this.name = hero.getName();
-        this.race = hero.getName();
+        this.race = hero.getRace();
     }
-
 
     public Hero() {
         this("Sasha", 0, "Gavs", null);
     }
-
 
     @Override
     public String toString() {
         return "Hero{" +
                 "name='" + name + '\'' +
                 ", race='" + race + '\'' +
-                "\nartifacts: " + Arrays.toString(artifacts) +
+                "\nartifacts: " + artifacts +
                 ", level=" + level +
                 " total stats" +
                 "}\n";

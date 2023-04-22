@@ -1,31 +1,35 @@
 package by.bntu.fitr.poisit.matnik.university.model.entity;
+
 import by.bntu.fitr.poisit.matnik.university.model.entity.Hero;
 import by.bntu.fitr.poisit.matnik.university.model.entity.Abilities;
-import java.util.Arrays;
 
-public class Assassin extends Hero{
-    Abilities[] abilities;
-    public Assassin(String name, int level, String race, Artifact[] artifacts){
+import java.util.Arrays;
+import java.util.List;
+
+public class Assassin extends Hero {
+    List<Abilities> abilities;
+
+    public Assassin(String name, int level, String race, List<Artifact> artifacts) {
         super(name, level, race, artifacts);
-        abilities = new Abilities[]{Abilities.BLINK, Abilities.INVISIBILITY};
+        abilities = Arrays.asList(Abilities.BLINK, Abilities.INVISIBILITY);
     }
 
-    public void setAbilities(Abilities[] abilities) {
+    public void setAbilities(List<Abilities> abilities) {
         this.abilities = abilities;
     }
 
-    public Abilities[] getAbilities() {
+    public List<Abilities> getAbilities() {
         return abilities;
     }
 
     @Override
     public String toString() {
         return "Assassin{" +
-                "abilities=" + Arrays.toString(abilities) +
+                "abilities=" + abilities +
                 ", name='" + name + '\'' +
                 ", race='" + race + '\'' +
-                ", \nartifacts=" + Arrays.toString(artifacts) +
+                ", \nartifacts=" + artifacts +
                 ", level=" + level +
-                '}'+ "\n";
+                '}' + "\n";
     }
 }
