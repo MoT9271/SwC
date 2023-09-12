@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-public class HeroInitializer {
+public class RandomHeroInitializer {
     public static List<Hero> initialize(List<Hero> heroes,int count) {
         List<Artifact> artifacts = new ArrayList<>();
         artifacts.add(new Artifact("Wraith Band", Arrays.asList(2, 5, 2, 0, 2, 5, 700)));
@@ -20,7 +20,6 @@ public class HeroInitializer {
         artifacts.add(new Artifact("Boots of Speed", Arrays.asList(0, 0, 0, 45, 0, 0, 300)));
         String[] names = new String[]{"Richard", "William", "Henry", "Norman", "Edward", "Atelard"};
         String[] races = new String[]{"Human", "Orc", "Dwarf", "Elf", "Worgen", "Undead", "Tauren", "Troll"};
-        Random random = new Random();
         for (int i = 0; i < count; i++) {
             String name = names[(int)Math.floor(Math.random() * names.length)];
             String race = races[(int)Math.floor(Math.random() * races.length)];
