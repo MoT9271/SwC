@@ -1,11 +1,14 @@
 package by.bntu.fitr.poisit.matnik.university.view;
 
-import by.bntu.fitr.poisit.matnik.university.model.entity.Hero;
+
 import by.bntu.fitr.poisit.matnik.university.model.logic.Manager;
 import by.bntu.fitr.poisit.matnik.university.model.logic.Sorter;
 import by.bntu.fitr.poisit.matnik.university.util.HardcoreHeroInitializer;
 import by.bntu.fitr.poisit.matnik.university.util.HeroCreator;
+
 import by.bntu.fitr.poisit.matnik.university.util.RandomHeroInitializer;
+import entity.Hero;
+
 
 import java.util.List;
 import java.util.Scanner;
@@ -25,6 +28,7 @@ public class Menu {
             System.out.println("7. Find by level");
             System.out.println("0. Exit");
             Scanner scanner = new Scanner(System.in);
+
             choice = scanner.next();
             switch (choice){
                 case "1":
@@ -97,6 +101,8 @@ public class Menu {
                     int level = scanner.nextInt();
                     Printer.print(Manager.findHeroesByLevel(heroes, level));
                     break;
+                case "0":
+                    System.out.println("Exiting...");
                 default:
                     System.out.println("Wrong choice!");
             }

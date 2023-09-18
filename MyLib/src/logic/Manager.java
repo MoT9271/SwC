@@ -1,10 +1,11 @@
-package by.bntu.fitr.poisit.matnik.university.model.logic;
+package logic;
 
-import entity.Hero;
+
 import entity.Artifact;
+import entity.Hero;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Manager {
 

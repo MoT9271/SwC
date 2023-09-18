@@ -1,6 +1,8 @@
 package by.bntu.fitr.poisit.matnik.university.util;
 
-import by.bntu.fitr.poisit.matnik.university.model.entity.*;
+
+
+import entity.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;

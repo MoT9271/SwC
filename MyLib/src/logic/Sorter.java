@@ -1,11 +1,10 @@
-package by.bntu.fitr.poisit.matnik.university.model.logic;
+package logic;
 
 
 import entity.Hero;
 
 import java.util.Comparator;
 import java.util.List;
-
 
 public class Sorter {
     public static List<Hero> sortByLevelName(List<Hero> heroes) {

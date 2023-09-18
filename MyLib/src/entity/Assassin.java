@@ -1,17 +1,14 @@
-package by.bntu.fitr.poisit.matnik.university.model.entity;
+package entity;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Arrays;
+import java.util.List;
 
-public class Support extends Hero {
+public class Assassin extends Hero {
     List<Abilities> abilities;
 
-    public Support(String name, int level, String race, List<Artifact> artifacts) {
+    public Assassin(String name, int level, String race, List<Artifact> artifacts) {
         super(name, level, race, artifacts);
-        abilities = new ArrayList<>();
-        abilities.add(Abilities.HEAL);
-        abilities.add(Abilities.STUN);
+        abilities = Arrays.asList(Abilities.BLINK, Abilities.INVISIBILITY);
     }
 
     public void setAbilities(List<Abilities> abilities) {
@@ -24,12 +21,12 @@ public class Support extends Hero {
 
     @Override
     public String toString() {
-        return "Support{" +
+        return "Assassin{" +
                 "abilities=" + abilities +
                 ", name='" + name + '\'' +
                 ", race='" + race + '\'' +
                 ", \nartifacts=" + artifacts +
                 ", level=" + level +
-                "}\n";
+                '}' + "\n";
     }
 }

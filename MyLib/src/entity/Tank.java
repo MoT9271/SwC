@@ -1,4 +1,4 @@
-package by.bntu.fitr.poisit.matnik.university.model.entity;
+package entity;
 
 import java.util.ArrayList;
 import java.util.List;

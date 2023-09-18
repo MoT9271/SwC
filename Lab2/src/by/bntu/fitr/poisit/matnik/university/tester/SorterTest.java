@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 
-import by.bntu.fitr.poisit.matnik.university.model.entity.*;
 import by.bntu.fitr.poisit.matnik.university.model.logic.Sorter;
+import entity.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

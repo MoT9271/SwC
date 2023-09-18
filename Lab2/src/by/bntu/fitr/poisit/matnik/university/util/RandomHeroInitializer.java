@@ -1,10 +1,7 @@
 package by.bntu.fitr.poisit.matnik.university.util;
 
-import by.bntu.fitr.poisit.matnik.university.model.entity.Artifact;
-import by.bntu.fitr.poisit.matnik.university.model.entity.Assassin;
-import by.bntu.fitr.poisit.matnik.university.model.entity.Hero;
-import by.bntu.fitr.poisit.matnik.university.model.entity.Support;
-import by.bntu.fitr.poisit.matnik.university.model.entity.Tank;
+
+import entity.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,7 +9,7 @@ import java.util.List;
 import java.util.Random;
 
 public class RandomHeroInitializer {
-    public static List<Hero> initialize(List<Hero> heroes,int count) {
+    public static List<Hero> initialize(List<Hero> heroes, int count) {
         List<Artifact> artifacts = new ArrayList<>();
         artifacts.add(new Artifact("Wraith Band", Arrays.asList(2, 5, 2, 0, 2, 5, 700)));
         artifacts.add(new Artifact("Bracer", Arrays.asList(5, 2, 2, 0, 2, 5, 260)));
