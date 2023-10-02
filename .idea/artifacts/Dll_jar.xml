@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="Dll:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Dll_jar</output-path>
+    <root id="root">
+      <element id="archive" name="Dll.jar">
+        <element id="module-output" name="Dll" />
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -2,6 +2,7 @@ package by.bntu.fitr.poisit.matnik.university.view;
 
 import java.util.List;
 
+
 public class Printer {
     public static void print(Object msg) {
         System.out.print(msg+ "\r\n");

@@ -1,18 +1,24 @@
 package by.bntu.fitr.poisit.matnik.university.view;
 
 
+
+
 import by.bntu.fitr.poisit.matnik.university.model.logic.Manager;
 import by.bntu.fitr.poisit.matnik.university.model.logic.Sorter;
 import by.bntu.fitr.poisit.matnik.university.util.HardcoreHeroInitializer;
 import by.bntu.fitr.poisit.matnik.university.util.HeroCreator;
 
 import by.bntu.fitr.poisit.matnik.university.util.RandomHeroInitializer;
-import entity.Hero;
 
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
+import java.util.ServiceLoader;
 
+
+import entity.Hero;
+import mypackage.Manageable;
 public class Menu {
     static List<Hero> heroes;
     public static void showMenu(){
@@ -28,7 +34,7 @@ public class Menu {
             System.out.println("7. Find by level");
             System.out.println("0. Exit");
             Scanner scanner = new Scanner(System.in);
-
+            Manager manager = new Manager();
             choice = scanner.next();
             switch (choice){
                 case "1":
@@ -38,7 +44,7 @@ public class Menu {
                     heroes = RandomHeroInitializer.initialize(heroes, count);
                     for (Hero hero : heroes){
                         Printer.print(hero);
-                        Printer.printStats(Manager.getStats(hero));
+                        Printer.printStats(manager.getStats(hero));
                     }
                     break;
                 case "2":
@@ -47,7 +53,7 @@ public class Menu {
                     heroes = HardcoreHeroInitializer.initialize(heroes);
                     for (Hero hero : heroes){
                         Printer.print(hero);
-                        Printer.printStats(Manager.getStats(hero));
+                        Printer.printStats(manager.getStats(hero));
                     }
                     break;
                 case "3":
@@ -58,7 +64,7 @@ public class Menu {
                     heroes = Sorter.sortByName(heroes);
                     for (Hero hero : heroes){
                         Printer.print(hero);
-                        Printer.printStats(Manager.getStats(hero));
+                        Printer.printStats(manager.getStats(hero));
                     }
                     break;
                 case "4":
@@ -69,7 +75,7 @@ public class Menu {
                     heroes = Sorter.sortByLevelName(heroes);
                     for (Hero hero : heroes){
                         Printer.print(hero);
-                        Printer.printStats(Manager.getStats(hero));
+                        Printer.printStats(manager.getStats(hero));
                     }
                     break;
                 case "5":
@@ -80,7 +86,7 @@ public class Menu {
                     heroes = Sorter.sortByBuildCost(heroes);
                     for (Hero hero : heroes){
                         Printer.print(hero);
-                        Printer.printStats(Manager.getStats(hero));
+                        Printer.printStats(manager.getStats(hero));
                     }
                     break;
                 case "6":
@@ -90,7 +96,7 @@ public class Menu {
                     }
                     System.out.println("Enter the name: ");
                     String name = scanner.next();
-                    Printer.print(Manager.findHeroesByName(heroes, name));
+                    Printer.print(manager.findHeroesByName(heroes, name));
                     break;
                 case "7":
                     if (heroes == null) {
@@ -99,7 +105,7 @@ public class Menu {
                     }
                     System.out.println("Enter the name: ");
                     int level = scanner.nextInt();
-                    Printer.print(Manager.findHeroesByLevel(heroes, level));
+                    Printer.print(manager.findHeroesByLevel(heroes, level));
                     break;
                 case "0":
                     System.out.println("Exiting...");

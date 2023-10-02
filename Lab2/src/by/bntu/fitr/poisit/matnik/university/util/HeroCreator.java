@@ -1,7 +1,11 @@
 package by.bntu.fitr.poisit.matnik.university.util;
+
+
+import entity.Hero;
+
 import java.util.ArrayList;
 import java.util.List;
-import entity.Hero;
+
 public class HeroCreator {
 
     public static List<Hero> create(int size) {

@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Sorter {
     public static List<Hero> sortByLevelName(List<Hero> heroes) {
+
         heroes.sort(Comparator.comparingInt(Hero::getLevel).thenComparing(Hero::getName));
         return heroes;
     }
@@ -19,7 +20,8 @@ public class Sorter {
     }
 
     public static List<Hero> sortByBuildCost(List<Hero> heroes) {
-        heroes.sort(Comparator.comparingDouble(hero -> Manager.getStats(hero).get(6)));
+        Manager manager = new Manager();
+        heroes.sort(Comparator.comparingDouble(hero -> manager.getStats(hero).get(6)));
         return heroes;
     }
 
