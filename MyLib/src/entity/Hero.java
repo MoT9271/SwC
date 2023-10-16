@@ -1,8 +1,9 @@
 package entity;
 
+import java.io.Serializable;
 import java.util.List;
 
-public abstract class Hero {
+public abstract class Hero implements Serializable {
 
     String name;
     String race;

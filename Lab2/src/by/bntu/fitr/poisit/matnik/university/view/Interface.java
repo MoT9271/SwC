@@ -1,19 +1,16 @@
 package by.bntu.fitr.poisit.matnik.university.view;
 
-import by.bntu.fitr.poisit.matnik.university.model.logic.Manager;
-import by.bntu.fitr.poisit.matnik.university.model.logic.Sorter;
-import by.bntu.fitr.poisit.matnik.university.util.HardcoreHeroInitializer;
-import by.bntu.fitr.poisit.matnik.university.util.HeroCreator;
-import by.bntu.fitr.poisit.matnik.university.util.RandomHeroInitializer;
+
+import by.bntu.fitr.poisit.matnik.university.util.*;
 import entity.Hero;
+import logic.Manager;
+import logic.Sorter;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class Interface {
@@ -184,6 +181,7 @@ public class Interface {
             int count = Integer.parseInt(textField.getText());
             heroes = HeroCreator.create(count);
             heroes = RandomHeroInitializer.initialize(heroes, count);
+
             for (Hero hero : heroes) {
                 updateOutput(hero.toString());
                 List<Integer> stats = manager.getStats(hero);
@@ -194,10 +192,11 @@ public class Interface {
         }
     }
 
+
     private void createHardcoreHero() {
         outputArea.setText("");
         heroes = HeroCreator.create(3);
-        heroes = HardcoreHeroInitializer.initialize(heroes);
+        heroes = HardcodeHeroInitializer.initialize(heroes);
         for (Hero hero : heroes) {
             updateOutput(hero.toString());
             List<Integer> stats = manager.getStats(hero);

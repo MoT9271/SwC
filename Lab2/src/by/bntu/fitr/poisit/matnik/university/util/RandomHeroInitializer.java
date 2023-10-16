@@ -1,11 +1,7 @@
 package by.bntu.fitr.poisit.matnik.university.util;
 
-
-
-
-
 import entity.*;
-
+import org.junit.jupiter.api.DisplayNameGeneration;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,6 +17,7 @@ public class RandomHeroInitializer {
         artifacts.add(new Artifact("Boots of Speed", Arrays.asList(0, 0, 0, 45, 0, 0, 300)));
         String[] names = new String[]{"Richard", "William", "Henry", "Norman", "Edward", "Atelard"};
         String[] races = new String[]{"Human", "Orc", "Dwarf", "Elf", "Worgen", "Undead", "Tauren", "Troll"};
+
         for (int i = 0; i < count; i++) {
             String name = names[(int)Math.floor(Math.random() * names.length)];
             String race = races[(int)Math.floor(Math.random() * races.length)];
@@ -30,15 +27,20 @@ public class RandomHeroInitializer {
             }
             int randomNumber = (int)(Math.floor(Math.random() * (3 - 1)) + 1);
             int level = (int)(Math.floor(Math.random() * (80 - 1)) + 1);
-            if (randomNumber == 1){
-                heroes.add(new Assassin(name, level, race, build));
+
+            // Создаем фабрику в зависимости от типа героя
+            HeroFactory heroFactory;
+            if (randomNumber == 1) {
+                heroFactory = HeroFactory.getFactory(HeroType.ASSASSIN);
+            } else if (randomNumber == 2) {
+                heroFactory = HeroFactory.getFactory(HeroType.SUPPORT);
+            } else {
+                heroFactory = HeroFactory.getFactory(HeroType.TANK);
             }
-            else if (randomNumber == 2){
-                heroes.add(new Support(name, level, race, build));
-            }
-            else {
-                heroes.add(new Tank(name, level, race, build));
-            }
+
+            // Используем фабрику для создания героя
+            Hero hero = heroFactory.createHero(name, level, race, build);
+            heroes.add(hero);
         }
         return heroes;
     }

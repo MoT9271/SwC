@@ -3,9 +3,7 @@ package by.bntu.fitr.poisit.matnik.university.view;
 
 
 
-import by.bntu.fitr.poisit.matnik.university.model.logic.Manager;
-import by.bntu.fitr.poisit.matnik.university.model.logic.Sorter;
-import by.bntu.fitr.poisit.matnik.university.util.HardcoreHeroInitializer;
+import by.bntu.fitr.poisit.matnik.university.util.HardcodeHeroInitializer;
 import by.bntu.fitr.poisit.matnik.university.util.HeroCreator;
 
 import by.bntu.fitr.poisit.matnik.university.util.RandomHeroInitializer;
@@ -18,6 +16,8 @@ import java.util.ServiceLoader;
 
 
 import entity.Hero;
+import logic.Manager;
+import logic.Sorter;
 import mypackage.Manageable;
 public class Menu {
     static List<Hero> heroes;
@@ -50,7 +50,7 @@ public class Menu {
                 case "2":
 
                     heroes = HeroCreator.create(3);
-                    heroes = HardcoreHeroInitializer.initialize(heroes);
+                    heroes = HardcodeHeroInitializer.initialize(heroes);
                     for (Hero hero : heroes){
                         Printer.print(hero);
                         Printer.printStats(manager.getStats(hero));

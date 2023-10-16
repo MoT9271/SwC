@@ -1,11 +1,12 @@
 package by.bntu.fitr.poisit.matnik.university.tester;
 
 
-import by.bntu.fitr.poisit.matnik.university.model.logic.Manager;
+
 import entity.Artifact;
 import entity.Assassin;
 import entity.Hero;
 import entity.Support;
+import logic.Manager;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 

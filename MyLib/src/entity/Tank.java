@@ -1,9 +1,10 @@
 package entity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tank extends Hero {
+public class Tank extends Hero implements Serializable {
 
     List<Abilities> abilities;
 

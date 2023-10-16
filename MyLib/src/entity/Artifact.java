@@ -1,9 +1,10 @@
 package entity;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
-public class Artifact
+public class Artifact implements Serializable
 {
     String type;
     List<Integer> stats;
