@@ -1,10 +1,14 @@
 package entity;
 
+
+
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
 public class Assassin extends Hero implements Serializable {
+
+    public Assassin(){}
     List<Abilities> abilities;
 
     public Assassin(String name, int level, String race, List<Artifact> artifacts) {

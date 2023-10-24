@@ -1,16 +1,26 @@
 package entity;
 
+
+
 import java.io.Serializable;
 import java.util.List;
+
 
 public abstract class Hero implements Serializable {
 
     String name;
+
+
     String race;
+
+
     List<Artifact> artifacts;
+
+
     int level;
 
     public abstract void setAbilities(List<Abilities> abilities);
+
     public abstract List<Abilities> getAbilities();
 
     public String getName() {

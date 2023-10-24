@@ -1,10 +1,15 @@
 package entity;
 
+
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Support extends Hero implements Serializable {
+
+    public Support(){}
+
     List<Abilities> abilities;
 
     public Support(String name, int level, String race, List<Artifact> artifacts) {

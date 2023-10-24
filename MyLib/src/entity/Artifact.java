@@ -1,19 +1,24 @@
 package entity;
 
+
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
-public class Artifact implements Serializable
-{
+public class Artifact implements Serializable {
+
+
     String type;
+
+
     List<Integer> stats;
-    public Artifact(String type, List<Integer> stats){
+
+    public Artifact(String type, List<Integer> stats) {
         this.type = type;
         this.stats = stats;
     }
 
-    public Artifact(){
+    public Artifact() {
         this("Wraith Band", Arrays.asList(2, 5, 2, 0, 2, 5, 700));
     }
 
